@@ -4,8 +4,8 @@ class CreateLineItems < ActiveRecord::Migration
       t.references :order, index: true, foreign_key: true
       t.references :product, index: true, foreign_key: true
       t.integer :quantity
-      t.integer :item_price_cents
-      t.integer :total_price_cents
+      t.monetize :item_price_cents
+      t.monetize :total_price_cents
 
       t.timestamps null: false
     end
