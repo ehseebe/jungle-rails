@@ -5,9 +5,9 @@
   </header>
 
   <% if cart.empty? %>
-    <% render 'cart_empty' %>
+    <%= render "cart_empty" %>
   <% else %>
-    <% render 'cart_full' %>
+    <%= render "cart_full" %>
   <% end %>
-  
+
 </section>
