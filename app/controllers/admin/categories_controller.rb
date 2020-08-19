@@ -15,7 +15,7 @@ class Admin::CategoriesController < ApplicationController
     if @category.save
       redirect_to [:admin, :categories], notice: 'Category created!'
     else 
-      render: new
+      render :new
     end
   end
 
@@ -32,5 +32,5 @@ class Admin::CategoriesController < ApplicationController
       :name
     )
   end
-  
+
 end
