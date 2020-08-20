@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       # saves user id in browser cookie so user can navigate freely
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to '/', :notice => "Welcome back!"
     else
       flash[:notice] = "Oops, incorrect username/password!"
       redirect_to '/login'
