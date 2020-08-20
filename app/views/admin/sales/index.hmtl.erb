@@ -23,6 +23,9 @@
       </thead>
       <tbody>
         <%# <%= render @sales %> %>
+
+        <% @sales.each do |s| %>
+          <%= render 'sale', sale: s %>
       </tbody>
     </table>
 
