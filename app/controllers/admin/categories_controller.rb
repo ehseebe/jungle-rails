@@ -20,7 +20,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find_by_name(params[:name])
+    @category = Category.find_by_name params[:name]
     @category.destroy
     redirect_to [:admin, :categories], notice: 'Category deleted!'
   end
