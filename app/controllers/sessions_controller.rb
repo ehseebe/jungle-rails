@@ -5,9 +5,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_email(params[:email])
     # checks user exists + password is correct
-    if user && user.authenticate(params[:password])
+    if user = User.authenticate_with_credentials(params[:email], params[:password])
       # saves user id in browser cookie so user can navigate freely
       session[:user_id] = user.id
       redirect_to '/', :notice => "Welcome back!"
