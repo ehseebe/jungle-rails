@@ -54,10 +54,9 @@ RSpec.describe User, type: :model do
   end
 
   describe ".authenticate_with_credentials" do
-
     it "is valid with valid attributes" do
       user = User.new(email: "alyssa@sidewalkplants.com", first_name: "Alyssa", last_name: "BT", password: "apple!123", password_confirmation: "apple!123")
-      
+
       expect(user).to be_valid
     end
   end
