@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
+      flash[:notice] = "Oops, a user is already registered with this email!"
       redirect_to '/signup'
     end
   end
