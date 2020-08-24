@@ -45,6 +45,8 @@ RSpec.describe User, type: :model do
     it "is not valid if email is not unique" do
       user = User.new(email: "alyssa@sidewalkplants.com", first_name: "Alyssa", last_name: "BT", password: "apple!123", password_confirmation: "apple!123")
 
+      user.save
+
       another_user = User.new(email: "alyssa@sidewalkplants.com", first_name: "Alyssa", last_name: "BT", password: "apple!123", password_confirmation: "apple!123")
 
       expect(another_user).to_not be_valid
