@@ -12,6 +12,43 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end
     
+    it "is not valid without a first name" do
+      user = User.new(email: "alyssa@sidewalkplants.com", first_name: "", last_name: "BT", password: "apple!123", password_confirmation: "apple!123")
+      expect(user).to_not be_valid
+    end
+
+    it "is not valid without a last name" do
+      user = User.new(email: "alyssa@sidewalkplants.com", first_name: "Alyssa", last_name: "", password: "apple!123", password_confirmation: "apple!123")
+      expect(user).to_not be_valid
+    end
+
+    it "is not valid without a password" do
+      user = User.new(email: "alyssa@sidewalkplants.com", first_name: "Alyssa", last_name: "BT", password: "", password_confirmation: "apple!123")
+      expect(user).to_not be_valid
+    end
+
+    it "is not valid without a password confirmation" do
+      user = User.new(email: "alyssa@sidewalkplants.com", first_name: "Alyssa", last_name: "BT", password: "apple!123", password_confirmation: "")
+      expect(user).to_not be_valid
+    end
+
+    it "is not valid if password and password confirmation do not match" do
+      user = User.new(email: "alyssa@sidewalkplants.com", first_name: "Alyssa", last_name: "BT", password: "apple!123", password_confirmation: "apple!")
+      expect(user).to_not be_valid
+    end
+
+    it "is not valid if password is less than 6 characters" do
+      user = User.new(email: "alyssa@sidewalkplants.com", first_name: "Alyssa", last_name: "BT", password: "apple", password_confirmation: "apple")
+      expect(user).to_not be_valid
+    end
+
+    it "is not valid if email is not unique" do
+      user = User.new(email: "alyssa@sidewalkplants.com", first_name: "Alyssa", last_name: "BT", password: "apple!123", password_confirmation: "apple!123")
+
+      another_user = User.new(email: "alyssa@sidewalkplants.com", first_name: "Alyssa", last_name: "BT", password: "apple!123", password_confirmation: "apple!123")
+
+      expect(another_user).to_not be_valid
+    end
   end
 
   describe ".authenticate_with_credentials" do
