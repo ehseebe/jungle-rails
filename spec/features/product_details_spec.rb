@@ -16,11 +16,14 @@ RSpec.feature "Visitor navigates to product details page", type: :feature, js: t
     end
   end
 
-  scenario "" do
+  scenario "They navigate to the product details page" do
     visit root_path
 
-    save_screenshot
-    expect(page).to have_css '.product-detail'
+    within ".products" do
+      first(:link, "Details").click
+    end
+
+    expect(page).to have_css '.products-show'
   end
 
 end
