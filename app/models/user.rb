@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   validates :password, presence: true, confirmation: true, length: { minimum: 6 }
 
   before_validation :strip_whitespace
+  
+  before_save :downcase_email
+
+  private
 
   def self.authenticate_with_credentials(email, password) 
     @user = User.find_by(email: email.downcase)
@@ -20,6 +24,10 @@ class User < ActiveRecord::Base
 
   def strip_whitespace
     self.email = self.email.strip unless self.email.nil?
+  end
+
+  def downcase_email
+    self.email = self.email.downcase
   end
 
 end
