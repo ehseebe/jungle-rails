@@ -9,9 +9,9 @@ class UsersController < ApplicationController
 
     #stores all emails in lowercase to avoid errors
     @user.email.downcase!
-
+   
     @user.save
-    
+
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Account created successfully!"
