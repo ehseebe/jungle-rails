@@ -59,5 +59,15 @@ RSpec.describe User, type: :model do
 
       expect(user).to be_valid
     end
+    it "is valid regardless of email letter case" do
+      user = User.new(email: "alySSa@SidewalkPlants.com", first_name: "Alyssa", last_name: "BT", password: "apple!123", password_confirmation: "apple!123")
+
+      expect(user).to be_valid
+    end
+    it "is valid regardless of whitespace around email" do
+      user = User.new(email: " alySSa@SidewalkPlants.com ", first_name: "Alyssa", last_name: "BT", password: "apple!123", password_confirmation: "apple!123")
+
+      expect(user).to be_valid
+    end
   end
 end
