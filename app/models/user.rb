@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :password, presence: true, confirmation: true, length: { minimum: 6 }
 
+  before_validation :strip_whitespace
+
   def self.authenticate_with_credentials(email, password) 
     @user = User.find_by(email: email.downcase)
     if @user && @user.authenticate(password)
@@ -14,6 +16,10 @@ class User < ActiveRecord::Base
     else
       nil
     end
+  end
+
+  def strip_whitespace
+    self.email = self.email.strip unless self.email.nil?
   end
 
 end
