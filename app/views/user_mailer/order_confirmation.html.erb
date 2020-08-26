@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi, <%= @user.first_name %></h1>
+    <p>
+      Thank you for shopping at <a href="http://0.0.0.0:3000/">Jungle.com</a>.  We'll be in touch as soon as your items become available to ship.<br>
+    </p>
+
+     <div class="order-summary jumbotron">
+    <h2>Order Confirmation</h2>
+     <p>for order #<%= @order.id %> </p>
+
+    <%= render "order_item", order: @order %>
+
+    <h3>Total: $<%= @order.total_cents / 100 %>.00</h3>
+  </div>
+
+  </body>
+</html>
