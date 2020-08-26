@@ -5,7 +5,7 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order <%= current_user.name %>! 🌴
+    <h4>Thank you for your order <%= current_user.first_name %>! 🌴
     <% if current_user %>
       An order confirmation has been sent to <%= current_user.email %>.</h4>
     <% end %>
