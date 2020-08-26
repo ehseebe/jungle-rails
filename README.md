@@ -2,6 +2,14 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+Main Features:
+* Admin Namespace to manage shop products, categories, and promotional sales
+* Secure authentication for users
+* Added buttons to build well-tailored user experience
+* Thorough testing with Rspec and Capybara
+
+Stretch Feature:
+* ActionMailer to send order confirmations
 
 ## Setup
 
@@ -25,3 +33,8 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## Testing
+
+* Rspec
+* Capybara
