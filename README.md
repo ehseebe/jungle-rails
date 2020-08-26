@@ -11,6 +11,12 @@ Main Features:
 Stretch Feature:
 * ActionMailer to send order confirmations
 
+## Screenshots
+
+![Jungle Admin](https://github.com/ehseebe/jungle-rails/blob/master/docs/jungle-admin.png?raw=true)
+![Jungle Main](https://github.com/ehseebe/jungle-rails/blob/master/docs/jungle-main.png?raw=true)
+![Order Confirmation](https://github.com/ehseebe/jungle-rails/blob/master/docs/jungle-confirmation.png?raw=true)
+
 ## Setup
 
 1. Run `bundle install` to install dependencies
