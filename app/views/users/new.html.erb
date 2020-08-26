@@ -4,6 +4,12 @@
     <h1>Sign up</h1>
   </header>
 
+    <% if flash[:notice] %>
+    <div class="alert alert-warning"><%= flash[:notice] %></div>
+    <% end %>
+
+  <br>
+
 <div class="row">
     <div class="col-sm-6 col-sm-offset-1">
       <%= form_for :user, url: '/users' do |form|  %>

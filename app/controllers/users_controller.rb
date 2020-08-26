@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Account created successfully!"
       redirect_to '/'
     else
-      flash[:notice] = "Oops, a user is already registered with this email!"
+      flash[:notice] = "Oops, we couldn't create an account with those credentials! Please try again."
       redirect_to '/signup'
     end
   end
