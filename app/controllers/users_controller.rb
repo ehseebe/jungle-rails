@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Account created successfully!"
       redirect_to '/'
     else
       flash[:notice] = "Oops, we couldn't create an account with those credentials! Please try again."
