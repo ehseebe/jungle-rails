@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
-      UserMailer.order_confirmation_email(order, user).deliver_now unless !current_user?
+      UserMailer.order_confirmation_email(order, user).deliver_now
       redirect_to order, flash.now[:notice]= 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
