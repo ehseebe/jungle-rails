@@ -12,7 +12,7 @@ class Admin::SalesController < ApplicationController
     @sale = Sale.new(sale_params)
 
     if @sale.save
-      redirect_to [:admin, :sales], notice: 'Sale created!'
+      redirect_to [:admin, :sales], flash.now[:notice]= 'Sale created!'
     else
       render :new
     end
@@ -21,7 +21,7 @@ class Admin::SalesController < ApplicationController
   def destroy
     @sale = Sale.find params[:id]
     @sale.destroy
-    redirect_to [:admin, :sales], notice: 'Sale deleted!'
+    redirect_to [:admin, :sales], flash.now[:notice]= 'Sale deleted!'
   end
 
   private
