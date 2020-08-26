@@ -14,4 +14,10 @@
     <%= link_to '+ New Product', [:new, :admin, :product], class: 'btn btn-info' %>
   </div>
 
+    <div class="well">
+<h3>  <%= pluralize(@sales.count, 'sale') %> in the database</h3>
+    <%= link_to 'View Sales', 'admin/sales', class: 'btn btn-info' %>
+    <%= link_to '+ New Sale', [:new, :admin, :sale], class: 'btn btn-info' %>
+  </div>
+
 

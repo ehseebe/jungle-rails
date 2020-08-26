@@ -22,6 +22,9 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= humanized_money_with_symbol @product.price %></dd>
+          <br>
+          <dt></dt>
+          <dd><%= link_to 'Return to shop', root_path, class: 'btn btn-info' %></dd>
         </dl>
       </div>
     </div>
